@@ -1,0 +1,60 @@
+What is this.
+A wifi remote control for Lyfco / Exgain robotic mowers like 1800/1750 and 1600.
+Features: Web interface
+-MQTT client  
+ Read 
+  battery        25.55   (V)
+  battprocent    66      (%)
+  status         00000000000000    (Status flags)
+  l_StatusTxt    "Lost power on base station"
+  l_ChargeTime   140    (hours)
+  runtime        110    (hours)
+  rssi           Good -55dBm
+  rssinum        -55
+  
+Set  (lyfco/set)
+  lstop		Stop
+  lrun		Run
+  lhome		Go home
+  lremote	Start remote mode
+  lforw		Move forward
+  lback		Move backwards
+  lleft         Move left
+  lright	Move right
+  lmow		Start cut motor
+
+
+
+
+Variants.
+When connecting the TX line it will block the TX from the built in Wifi chip.
+This will render the Lyfco app not working anymore. If you have a model with display it is not a big problem.
+But if you have a mode without display the App is neccesary to set cutting shedule and settings.
+
+Variant 1. No App support, easy to connect.
+Variant 2. wit app support require a AND gate (4011 or similar) to be in series with the TX line.
+
+
+Materials needed
+- ESP8266 development board, like Wemos D1 or similar.
+- For variant 2, a 4011 NAND gate.
+- Thin cables
+- Soldering equipment and skills.
+
+Preparing the hardware
+- Setup Arduino for your ESP board and compile the code
+- Upload the code to the ESP using USB cable
+- Run Serial debug window and typ CFG and Enter.
+- Change config like Wifi, password, MQTT etc by typing like "CFG wifi_ssid=test"
+- As soon it has connected to WiFi you can connect to its IP via web browser for more convenient settings management and monitoring.
+- Solder 4 cables as shown in diagram, OBS If not using Wemos, Pins may be different.
+- For variant 2, 5 cables in neccesary and the 4011 chip.
+
+
+Installation
+- Turn off the Lyfco completely and open the top cover.
+- Locate the built Wifi module (White QR code sticker)
+- Connect the 4 cables as shown in diagrams and pictures.
+- For variant 5. Cut the PCB copper trace as showing in diagram and solder 5 cables.
+
+
