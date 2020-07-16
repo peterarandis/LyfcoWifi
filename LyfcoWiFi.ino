@@ -200,12 +200,7 @@ void loop() {
         if (setting[MQTT_ENAB].toInt())  if (!client.connected()) {reconnect();}    // MQTT Reconnect om avbrott till server
         
         mqtt_pub_all();
-
-
- 
-          
-   
-            
+  
    }
  
 }
@@ -233,17 +228,9 @@ void SerialDebugRX(){   // Data mottages på debugport
       else if (rxbuff == "RESET")   {ESP.reset(); hit=true;}   // Starta om ESP
       else if (rxbuff == "VERBOSE") {Serial.println("Verbose ON"); cfg_VerboseTrace = 1; hit=true; }  
       else if (rxbuff == "STAT0")  {statCharges=0;statRuns=0;write_eeprom(); hit=true; }  
-
-      /*else if (rxbuff == "LSTAT")  {H1_SendCommand("lstat"); hit=true; }  
-      else if (rxbuff == "LRUN")  {H1_SendCommand("lrun"); hit=true; }  
-      else if (rxbuff == "LSTOP")  {H1_SendCommand("lstop"); hit=true; }  
-      else if (rxbuff == "LHOME")  {H1_SendCommand("lhome"); hit=true; }  */
-      
-      
       else if (rxbuff == "M")       {if (setting[MQTT_ENAB].toInt() && state_HPComm)  if (!client.connected()) reconnect(); mqtt_pub_all();}    // MQTT Reconnect 
-
-      
-      else if (rxbuff.substring(0,1) == "L")  {H1_SendCommand(rxbuff); hit=true; } 
+    
+      else if (rxbuff.substring(0,1) == "L")  {H1_SendCommand(rxbuff); hit=true; }  // LYFCO CMD
       
     
       rxbuff="";

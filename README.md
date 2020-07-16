@@ -1,32 +1,33 @@
-# LyfcoWifi
- Lyfco/Exgain Wifi Module MQTT/restAPI
+# Lyfco/Exgain Wifi Module MQTT/restAPI
  
 What is this?
+
 A wifi remote control for Lyfco / Exgain robotic mowers like 1800/1750 and 1600.
 Features: Web interface and MQTT client  
 
-MQTT -----------
- Read 
-  battery        25.55   (V)
-  battprocent    66      (%)
-  status         00000000000000    (Status flags)
-  l_StatusTxt    "Lost power on base station"
-  l_ChargeTime   140    (hours)
-  runtime        110    (hours)
-  rssi           Good -55dBm
-  rssinum        -55
+MQTT Read -----------
+
+- battery        (25.55V)
+- battprocent    (66%)
+- status         ("00000000000000" Status flags)
+- statustxt      ("Lost power on base station")
+- chargetime     (140 hours)
+- runtime        (110 hours)
+- rssi           ("Good -55dBm")
+- rssinum        (-55)
   
-Set  (lyfco/set)
-  PAYLOAD
-  lstop		Stop
-  lrun		Run
-  lhome		Go home
-  lremote	Start remote mode
-  lforw		Move forward
-  lback		Move backwards
-  lleft         Move left
-  lright	Move right
-  lmow		Start cut motor
+MWTT Set  (lyfco/set)
+
+- PAYLOAD
+- lstop		Stop
+- lrun		Run
+- lhome		Go home
+- lremote	Start remote mode
+- lforw		Move forward
+- lback		Move backwards
+- lleft         Move left
+- lright	Move right
+- lmow		Start cut motor
 
 
 
