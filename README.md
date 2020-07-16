@@ -5,31 +5,6 @@ What is this?
 A wifi remote control for Lyfco / Exgain robotic mowers like 1800/1750 and 1600.
 Features: Web interface and MQTT client  
 
-MQTT Read -----------
-
-- battery        (25.55V)
-- battprocent    (66%)
-- status         ("00000000000000" Status flags)
-- statustxt      ("Lost power on base station")
-- chargetime     (140 hours)
-- runtime        (110 hours)
-- rssi           ("Good -55dBm")
-- rssinum        (-55)
-  
-MWTT Set  (lyfco/set)
-
-- PAYLOAD
-- lstop		Stop
-- lrun		Run
-- lhome		Go home
-- lremote	Start remote mode
-- lforw		Move forward
-- lback		Move backwards
-- lleft         Move left
-- lright	Move right
-- lmow		Start cut motor
-
-
 
 Materials needed
 - ESP8266 development board, like Wemos D1 or similar.
@@ -51,5 +26,29 @@ Installation
 - Connect the 5 cables as shown in diagrams and pictures.
 
 
+
+MQTT Read -----------
+
+- battery        (25.55V)
+- battprocent    (66%)
+- status         ("00000000000000" Status flags)
+- statustxt      ("Lost power on base station")
+- chargetime     (140 hours)
+- runtime        (110 hours)
+- rssi           ("Good -55dBm")
+- rssinum        (-55)
+  
+MQTT Set  (lyfco/set) ------------
+
+- PAYLOAD
+- lstop		Stop
+- lrun		Run
+- lhome		Go home
+- lremote	Start remote mode
+- lforw		Move forward
+- lback		Move backwards
+- lleft         Move left
+- lright	Move right
+- lmow		Start cut motor
 
 
