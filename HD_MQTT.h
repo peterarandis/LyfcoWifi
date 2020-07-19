@@ -101,6 +101,7 @@ void mqtt_pub_all()   // Send all values on request DUMP
   mqttpub ("rssi", String(g_wifi_rssi)) ;
   mqttpub ("rssinum", g_wifi_rssi_num) ;
   mqttpub ("mode", l_Mode) ;
+  mqttpub ("alarm", String(l_Alarm)) ;
 
 
   

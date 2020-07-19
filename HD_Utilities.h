@@ -106,7 +106,7 @@ void settings_rw(bool read_settings){ //Läs och skriv inställningar till SPIFF
   bool Hit=0;  
     
   cfg_version_major = 0;
-  cfg_version_minor = 2;
+  cfg_version_minor = 5;
   if (!read_settings)
     {
     // Ladda config från SPIFFS fil.

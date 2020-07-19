@@ -37,8 +37,10 @@ int l_BattProcent;
 String l_Status="";
 int l_ChargeTime;
 int l_RunTime;
+int l_Alarm=0;
 String l_StatusTxt="";
 String l_Mode="Standby";
+String Mode[2];
 
 
 
