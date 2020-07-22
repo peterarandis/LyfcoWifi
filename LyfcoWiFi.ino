@@ -43,6 +43,14 @@ void setup() { // ESP Boot
   Serial.println("    LYFCO WIFI  (C) Peter Hansson 2020 ");
   Serial.println("-------------------------------------------");  
   Serial.println("\n-- Startup --");
+
+
+ /* crc("##18F40004111110ccEE");
+  crc("##35W00012301762863000000000000001195");
+  crc("##35W00012301762863000000000000001194");
+*/
+ // crc("##35W0001230176260900000000000000F996");
+ 
   
   // ----------- WIFI CONNECT --------------
   trace("Wifi connecting to: " + setting[WIFI_SSID],"SER LOG LF");
