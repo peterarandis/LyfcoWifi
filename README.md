@@ -1,9 +1,9 @@
-# Lyfco/Exgain Wifi Module MQTT/restAPI
+# Lyfco/Exgain Robotic mower Wifi Module MQTT/restAPI
  
 What is this?
 
-A wifi remote control for Lyfco / Exgain robotic mowers like 1800/1750 and 1600.
-Features: Web interface and MQTT client  
+A wifi remote control for Lyfco / Exgain robotic mowers models 1800, 1750 and 1600.
+Features: Web interface and MQTT client for status readout and remote control.
 
 
 Materials needed
@@ -17,14 +17,14 @@ Preparing the hardware
 - Run Serial debug window and type CFG and Enter to list current config.
 - Change config like Wifi, password, MQTT etc by typing like "CFG wifi_ssid=test"
 - As soon it has connected to WiFi you can connect to its IP via web browser for more convenient settings management and monitoring.
-- Solder 5 cables as shown in diagram, OBS If not using Wemos, Pins may be different.
+- Solder 6 cables as shown in diagram, OBS If not using Wemos, Pins may be different.
 
 
 Installation
 - Turn off the Lyfco completely and open the top cover.
 - Locate the built Wifi module (White QR code sticker)
-- Connect the 5 cables as shown in diagrams and pictures.
-
+- Connect the 6 cables as shown in diagrams and pictures.
+- Mount/place the Wifi module in a good spot.
 
 
 MQTT Read -----------
@@ -37,6 +37,8 @@ MQTT Read -----------
 - runtime        (110 hours)
 - rssi           ("Good -55dBm")
 - rssinum        (-55)
+- mode			 ("Standby", "Charging" or "Running")
+- alarm		     (0 or 1)
   
 MQTT Set  (lyfco/set) ------------
 
@@ -47,7 +49,7 @@ MQTT Set  (lyfco/set) ------------
 - lremote	Start remote mode
 - lforw		Move forward
 - lback		Move backwards
-- lleft         Move left
+- lleft     Move left
 - lright	Move right
 - lmow		Start cut motor
 

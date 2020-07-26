@@ -16,8 +16,10 @@ os_timer_t myTimer;                      // Init soft interrupt timer
 WiFiClient Online_Mqtt_Client;           // Init MQTT 
 PubSubClient client(Online_Mqtt_Client); // Init MQTT 
 
+const int MOW=5; // Klippmotor D1
 SoftwareSerial H1(13, 12, false, 1024);  // Init software serial  Pin (RX D7)13, (TX D6)12, non inv, buff for lyfco serial
 SoftwareSerial H2(14, 16, false, 1024);  // Init software serial  Pin (RX D5)14, (TX D0)16, non inv, buff for lyfco from Module/APP
+
 
 #include "HD_Utilities.h"       // Diverse funktioner: Eprom, Oled
 #include "HD_Online.h"          // online calls / logging
@@ -35,6 +37,7 @@ void setup() { // ESP Boot
   Serial.begin(115200);             // Debug serial usb setup
   H1.begin(115200);                  // H1 soft serial setup
   H2.begin(115200);                  // H1 soft serial setup
+  pinMode  (MOW,INPUT); // Klippmotor  D1
   //init_eeprom(); read_eeprom();     // Initiera Epromrutiner och läs in settings
   settings_rw(0);                   // Läs in settings
   
@@ -45,12 +48,6 @@ void setup() { // ESP Boot
   Serial.println("\n-- Startup --");
 
 
- /* crc("##18F40004111110ccEE");
-  crc("##35W00012301762863000000000000001195");
-  crc("##35W00012301762863000000000000001194");
-*/
- // crc("##35W0001230176260900000000000000F996");
- 
   
   // ----------- WIFI CONNECT --------------
   trace("Wifi connecting to: " + setting[WIFI_SSID],"SER LOG LF");
@@ -177,7 +174,7 @@ void loop() {
   if (state_Wifi) 
                 if (blinkLedCount++ > 1000) {blinkLed(); blinkLedCount=0;}
 
-  
+    
   if (onemin){ // Kör varje ny minut utanför timer rutin då den krashar annars.
     //Serial.print("Time since start: ");Serial.println(tid(0));
     //Serial.print("Minute:"); Serial.println(int(stored_minute_ptr));
